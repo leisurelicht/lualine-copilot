@@ -29,12 +29,6 @@ Copilot disabled
 use { "leisurelicht/lualine-copilot" }
 ```
 
-## [vim-plug](https://github.com/junegunn/vim-plug)
-```vim
-" vimscript
-Plug 'leisurelicht/lualine-copilot'
-```
-
 # Usage
 Default values for lualine configuration is
 ```lua
@@ -66,7 +60,7 @@ require("lualine").setup {
         "copilot",
         -- default is true.
         symbols = {
-          -- use your icons replace
+          -- use your icons to replace
           enabled = " ",
           disabled = " ",
         }
