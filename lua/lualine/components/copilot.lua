@@ -1,6 +1,4 @@
 local M = require("lualine.component"):extend()
-local copilot_client = require("copilot.client")
-local copilot_command = require("copilot.command")
 
 ---@class CopilotComponentOptions
 local default_options = {
@@ -13,7 +11,7 @@ local default_options = {
 }
 
 local function check_status()
-  local client = copilot_client.get()
+  local client = require("copilot.client").get()
   if not client then
     return 1
   end
@@ -23,6 +21,7 @@ end
 
 local function toggle()
   local status = check_status()
+  local copilot_command = require("copilot.command")
   if status == 0 then
     copilot_command.disable()
   elseif status == 1 then
@@ -53,4 +52,3 @@ function M:update_status()
 end
 
 return M
-
